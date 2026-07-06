@@ -1,0 +1,220 @@
+/* Scoped CSS ported from service design, without global resets */
+
+.services-section {
+  padding: 1rem 1rem; /* align with global section spacing */
+  background-color: #ffffff; /* switched to white background */
+}
+
+.services-section .container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+/* Header */
+.services-section .services-header {
+  margin-bottom: 3rem;
+  text-align: center; /* Center-align header content */
+}
+
+.services-section .services-title {
+  /* Defer typography to global .section-title for uniformity */
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.services-section .services-subtitle {
+  /* Defer typography to global .section-subtitle for uniformity */
+  max-width: 42rem;
+  margin: 0 auto; /* Center the narrower subtitle block */
+}
+
+/* Grid Layout */
+.services-section .services-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  grid-auto-rows: clamp(220px, 30vw, 380px);
+}
+
+/* Responsive Grid */
+@media (min-width: 640px) {
+  .services-section .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-section {
+    padding: 1rem 1rem; /* keep consistent spacing on desktop */
+  }
+  .services-section .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: clamp(280px, 22vw, 440px);
+  }
+
+  /* Making 1st and 4th cards span 2 rows for masonry effect */
+  .services-section .service-card-1,
+  .services-section .service-card-4 {
+    grid-row: span 2;
+  }
+}
+
+/* Service Cards */
+.services-section .service-card {
+  position: relative;
+  /* Removed visual card styles from wrapper */
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.services-section .service-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid #ffffff; /* white border per request */
+  background-color: #ffffff;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  /* default drop shadow */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+    0 4px 6px -2px rgba(0, 0, 0, 0.12);
+  flex-grow: 1; /* Allow image wrapper to fill available space if needed */
+  min-height: 200px; /* Ensure visibility */
+}
+
+.services-section .service-card:hover .service-img-wrapper {
+  border-color: #ea5921;
+  box-shadow: 0 20px 25px -5px rgba(234, 89, 33, 0.18),
+    0 8px 10px -6px rgba(234, 89, 33, 0.12);
+}
+
+/* Image Background */
+.services-section .service-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+
+/* Overlay Gradient */
+.services-section .service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  opacity: 0; /* Hidden by default, only show on hover */
+  transition: opacity 0.3s ease;
+}
+
+.services-section .service-card:hover .service-overlay {
+  opacity: 1;
+}
+
+/* Content */
+.services-section .service-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 10;
+}
+
+.services-section .service-title {
+  font-size: 1.25rem; /* Slightly smaller since it's outside */
+  font-weight: 700;
+  color: #1a1a1a; /* Dark color for outside text */
+  margin-top: 1rem;
+  margin-bottom: 0;
+  transition: color 0.3s ease;
+  text-align: center; /* Center align title */
+}
+
+.services-section .service-card:hover .service-title {
+  color: #ea5921;
+}
+
+.services-section .service-description {
+  font-size: 0.875rem;
+  color: #000000;
+  font-weight: 500;
+  max-height: 0;
+  margin: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.services-section .service-card:hover .service-description {
+  max-height: 6rem;
+  opacity: 1;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* Arrow Icon */
+.services-section .service-arrow {
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  color: #ea5921;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateX(0);
+}
+
+.services-section .service-card:hover .service-arrow {
+  opacity: 1;
+  transform: translateX(0.5rem);
+  max-height: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.services-section .arrow-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke-width: 2;
+}
+
+/* Read More label styles */
+.services-section .read-more-text {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600; /* semi-bold for emphasis */
+}
+
+/* Tablet Adjustments */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 2rem 1rem;
+  }
+
+  .services-section .services-header {
+    margin-bottom: 2rem;
+  }
+
+  /* Heading size inherits from .section-title */
+
+  .services-section .service-card-1,
+  .services-section .service-card-4 {
+    grid-row: span 2;
+  }
+}

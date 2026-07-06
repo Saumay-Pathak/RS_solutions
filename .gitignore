@@ -1,0 +1,28 @@
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE & Editor Configs
+.idea/
+.vscode/
+.gemini/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Staging/Production build and dependency overrides
+node_modules/
+vendor/
+.env
+
+# Subfolder ignores
+backend/node_modules/
+backend/vendor/
+backend/.env
+frontend/node_modules/
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+frontend/.next/

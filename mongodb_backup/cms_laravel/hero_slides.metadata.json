@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"1db4aa2cc6404eacbe003c815056a81d","collectionName":"hero_slides","type":"collection"}

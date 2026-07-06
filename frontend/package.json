@@ -1,0 +1,49 @@
+{
+  "name": "realtime-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@next/third-parties": "^16.1.1",
+    "@tabler/icons-react": "^3.35.0",
+    "axios": "^1.12.2",
+    "date-fns": "^4.1.0",
+    "dompurify": "^3.3.0",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.23.26",
+    "gsap": "^3.13.0",
+    "js-file-download": "^0.4.12",
+    "lucide-react": "^0.546.0",
+    "next": "^16.1.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-icons": "^5.5.0",
+    "react-select": "^5.10.2",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.26.3",
+    "swiper": "^12.0.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.49.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/estree": "^1.0.8",
+    "@types/json-schema": "^7.0.15",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-select": "^5.0.0",
+    "@types/react-slick": "^0.23.13",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

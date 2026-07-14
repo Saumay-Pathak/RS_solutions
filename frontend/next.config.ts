@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "api.rssolutionsindia.co.in",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
         hostname: "app.realtimebiometrics.net",
         pathname: "**",
       },
@@ -18,6 +23,12 @@ const nextConfig: NextConfig = {
       {
         protocol: "http",
         hostname: "localhost",
+        port: "8000",
+        pathname: "**",
+      },
+      {
+        protocol: "http",
+        hostname: "127.0.0.1",
         port: "8000",
         pathname: "**",
       },

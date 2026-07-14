@@ -24,10 +24,10 @@ export default function CertificationsSection() {
   const [loading, setLoading] = useState(true);
 
   const galleryImages = [
-    "https://app.realtimebiometrics.net/storage/gallery/46jRaSrgAxZVTtQx3Ak8mrx56s6uVeZX8OoSaVHa.png",
-    "https://app.realtimebiometrics.net/storage/gallery/57eZxLwYTQqDG3SFR6ppUSdiF8VgaODRMxdliFZI.webp",
-    "https://app.realtimebiometrics.net/storage/gallery/oReOV7cq00VwpHyhTx1em0U3c2nkjOmETMMlaXMc.png",
-    "https://app.realtimebiometrics.net/storage/gallery/5oMjaZAZav7bOwGiMk0RfMlR409Cd8DDflfn1XOu.png",
+    `${baseUri}gallery/46jRaSrgAxZVTtQx3Ak8mrx56s6uVeZX8OoSaVHa.png`,
+    `${baseUri}gallery/57eZxLwYTQqDG3SFR6ppUSdiF8VgaODRMxdliFZI.webp`,
+    `${baseUri}gallery/oReOV7cq00VwpHyhTx1em0U3c2nkjOmETMMlaXMc.png`,
+    `${baseUri}gallery/5oMjaZAZav7bOwGiMk0RfMlR409Cd8DDflfn1XOu.png`,
   ];
 
   useEffect(() => {

@@ -1,3 +1,4 @@
+import { baseUri } from "./constant";
 import axiosClient from "./axiosClient";
 
 export const getSliderData = async () => {
@@ -5,4 +6,4 @@ export const getSliderData = async () => {
   return response.data;
 };
 
-export const imageLink = "https://app.realtimebiometrics.net/storage/";
+export const imageLink = baseUri;

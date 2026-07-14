@@ -5,6 +5,7 @@ import Link from "next/link";
 import axiosClient from "@/services/axiosClient";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { baseUri } from "@/services/constant";
 
 type Product = {
   id: string;
@@ -165,7 +166,6 @@ const ProductsMegaMenu = () => {
   const activeCategoryData = categories.find((cat) => cat.id === activeCategory);
   const displayedProducts = activeCategoryData?.products || [];
   const totalProductsInCategory = activeCategoryData?.products?.length || 0;
-  const baseUrl = "https://app.realtimebiometrics.net";
 
   if (loading) {
     return (
@@ -252,7 +252,7 @@ const ProductsMegaMenu = () => {
                           {product.images && product.images.length > 0 ? (
                             <div className="flex-shrink-0 w-14 h-14 bg-gray-50 rounded-lg overflow-hidden relative border border-gray-100 group-hover/item:scale-105 transition-transform duration-200">
                               <Image
-                                src={`${baseUrl}/storage/${product.images[0]}`}
+                                src={`${baseUri}${product.images[0]}`}
                                 alt={product.title}
                                 fill
                                 sizes="56px"

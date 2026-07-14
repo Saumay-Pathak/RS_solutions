@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import axiosClient from "@/services/axiosClient";
+import { baseUri } from "@/services/constant";
 
 type Product = {
   id: string;
@@ -49,7 +50,6 @@ const SpotlightSection = () => {
     fetchProducts();
   }, []);
 
-  const baseUrl = "https://app.realtimebiometrics.net";
 
   return (
     <section className="pt-16 lg:py-16 bg-white">
@@ -88,7 +88,7 @@ const SpotlightSection = () => {
                   <div className="relative h-36 md:h-40 lg:h-44 rounded-lg bg-gray-100 overflow-hidden">
                     {product.images && product.images.length > 0 ? (
                       <Image
-                        src={`${baseUrl}/storage/${product.images[0]}`}
+                        src={`${baseUri}${product.images[0]}`}
                         alt={product.title}
                         fill
                         className="object-contain p-2"

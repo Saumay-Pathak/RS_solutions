@@ -120,7 +120,7 @@ export default function DownloadModal({ software, onClose }: Props) {
   };
 
   const handleDownloadTracking = async () => {
-    const base = process.env.NEXT_PUBLIC_API_BASE_URL || "https://app.realtimebiometrics.net/api";
+    const base = process.env.NEXT_PUBLIC_API_BASE_URL;
     try {
       await axios.post(`${base}/content/software/${software.slug}/increment-download`);
     } catch (err) {

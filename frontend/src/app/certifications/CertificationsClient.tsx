@@ -47,7 +47,7 @@ export default function CertificationsClient() {
     const load = async () => {
       try {
         setLoading(true);
-        const res = await fetch("https://app.realtimebiometrics.net/api/content/certifications", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/content/certifications`, {
           cache: "no-store",
           headers: { "Accept": "application/json" },
         });

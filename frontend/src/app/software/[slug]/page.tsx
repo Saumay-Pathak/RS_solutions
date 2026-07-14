@@ -39,9 +39,7 @@ const getSoftwareData = cache(
         return { software: null, error: "Invalid software slug" };
       }
 
-      const base =
-        process.env.NEXT_PUBLIC_API_BASE_URL ||
-        "https://app.realtimebiometrics.net/api";
+      const base = process.env.NEXT_PUBLIC_API_BASE_URL;
 
       const res = await fetch(`${base}/content/software`, {
         cache: "no-store",
@@ -138,9 +136,7 @@ export async function generateStaticParams(): Promise<
   { slug: string }[]
 > {
   try {
-    const base =
-      process.env.NEXT_PUBLIC_API_BASE_URL ||
-      "https://app.realtimebiometrics.net/api";
+    const base = process.env.NEXT_PUBLIC_API_BASE_URL;
 
     const res = await fetch(`${base}/content/software`, {
       cache: "no-store",

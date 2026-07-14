@@ -116,9 +116,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   } catch {}
 
   try {
-    const base =
-      process.env.NEXT_PUBLIC_API_BASE_URL ||
-      "https://app.realtimebiometrics.net/api";
+    const base = process.env.NEXT_PUBLIC_API_BASE_URL;
     const res = await fetch(`${base}/content/software`, {
       cache: "no-store",
       headers: { Accept: "application/json" },

@@ -57,7 +57,7 @@ export default function StatsCounter({
     let cancelled = false;
     const load = async () => {
       try {
-        const res = await fetch("https://app.realtimebiometrics.net/api/site/counters");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/site/counters`);
         const json = await res.json();
         const list = Array.isArray(json?.data) ? json.data : [];
         const mapped: StatItem[] = list.map((item: CounterApiItem) => {

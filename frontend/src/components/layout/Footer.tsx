@@ -107,7 +107,7 @@ const Footer = () => {
     const fetchVisitorCount = async () => {
       try {
         const res = await axios.get(
-          "https://app.realtimebiometrics.net/api/analytics/visit-count"
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/analytics/visit-count`
         );
         if (res.data.success) {
           setVisitorCount(res.data.data.total_visits);

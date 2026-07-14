@@ -102,7 +102,7 @@ export async function middleware(req: NextRequest) {
   }
 
   // Check maintenance status from backend
-  const base = process.env.NEXT_PUBLIC_API_BASE_URL || "https://app.realtimebiometrics.net/api";
+  const base = process.env.NEXT_PUBLIC_API_BASE_URL;
   try {
     const res = await fetch(`${base}/site/header`, { cache: "no-store" });
     const data = await res.json();

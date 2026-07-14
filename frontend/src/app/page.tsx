@@ -62,8 +62,7 @@ const getSectionListFromResponse = (value: unknown): SiteSectionConfig[] => {
 };
 
 const getSections = async (): Promise<SiteSectionConfig[]> => {
-  const base =
-    process.env.NEXT_PUBLIC_API_BASE_URL || "https://app.realtimebiometrics.net/api";
+  const base = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   try {
     const res = await fetch(`${base}/site/sections`, {

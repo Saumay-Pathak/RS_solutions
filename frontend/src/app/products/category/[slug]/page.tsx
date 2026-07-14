@@ -7,9 +7,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const apiBase =
-    process.env.NEXT_PUBLIC_API_BASE_URL ||
-    "https://app.realtimebiometrics.net/api";
+  const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   try {
     const res = await fetch(

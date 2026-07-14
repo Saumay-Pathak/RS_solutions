@@ -1,7 +1,7 @@
 import axios, { type AxiosResponse, type AxiosRequestConfig } from "axios";
 
 const axiosClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || "https://app.realtimebiometrics.net/api",
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },

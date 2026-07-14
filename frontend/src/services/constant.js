@@ -1,7 +1,7 @@
 const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL || "";
 const defaultStorage = apiBase
   ? apiBase.replace(/\/api\/?$/, "/storage/")
-  : "http://localhost:8000/storage/";
+  : "https://api.rssolutionsindia.co.in/storage/";
 const rawStorage = process.env.NEXT_PUBLIC_STORAGE_URL || defaultStorage;
 
 export const baseUri = rawStorage.endsWith("/") ? rawStorage : `${rawStorage}/`;

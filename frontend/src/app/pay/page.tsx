@@ -4,7 +4,6 @@ import Layout from "@/components/layout/Layout";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import { baseUri } from "@/services/constant";
 import { FaUniversity, FaCopy } from "react-icons/fa";
 
 const Page = () => {
@@ -93,7 +92,7 @@ const Page = () => {
             <div className="p-6 flex flex-col items-center">
               <p className="text-gray-900 font-medium">Realtime Biometrics</p>
               <Image
-                src={`${baseUri}gallery/8F9rdpWPWrvoW2Dd7Lv8XbFiL8lH8egR2ID1HH5V.jpg`}
+                src="https://api.rssolutionsindia.co.in/storage/gallery/8F9rdpWPWrvoW2Dd7Lv8XbFiL8lH8egR2ID1HH5V.jpg"
                 alt="PayU QR Code"
                 width={400}
                 height={400}
@@ -129,7 +128,7 @@ const Page = () => {
             <div className="p-6 flex flex-col items-center">
               <p className="text-gray-900 font-medium">Verified Merchant</p>
               <Image
-                src={`${baseUri}gallery/QHUpy2CYbCtvgZmmCUHs4QfOAiuDFcwkkCmLkIvO.png`}
+                src="https://api.rssolutionsindia.co.in/storage/gallery/QHUpy2CYbCtvgZmmCUHs4QfOAiuDFcwkkCmLkIvO.png"
                 alt="Paytm QR Code"
                 width={400}
                 height={400}

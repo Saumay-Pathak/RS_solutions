@@ -6,4 +6,4 @@ export const getSliderData = async () => {
   return response.data;
 };
 
-export const imageLink = baseUri;
+export const imageLink = "https://api.rssolutionsindia.co.in/storage/";

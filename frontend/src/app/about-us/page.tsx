@@ -4,7 +4,6 @@ import CertificationsSection from "@/components/sections/CertificationsSection";
 import Layout from "@/components/layout/Layout";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { baseUri } from "@/services/constant";
 import { getContactInfo } from "@/services/contactServices";
 import {
   FaShieldAlt,
@@ -44,7 +43,7 @@ const Page = () => {
             </div>
             <div className="relative h-56 md:h-80 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src={`${baseUri}gallery/pwI5bfW68tQeymOV8QU3gKkDeUd3UeOHzVK9oug2.jpg`}
+                src="https://api.rssolutionsindia.co.in/storage/gallery/pwI5bfW68tQeymOV8QU3gKkDeUd3UeOHzVK9oug2.jpg"
                 alt="About Realtime Biometrics"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
@@ -535,7 +534,7 @@ const PresenceWithMap: React.FC = () => {
         {/* Map */}
         <div className="mt-8 relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg">
           <Image
-            src={`${baseUri}gallery/sJwqp7HgQpIdnVtUHPczoFRsvVdVXBGtRbFmvRzu.png`}
+            src="https://api.rssolutionsindia.co.in/storage/gallery/sJwqp7HgQpIdnVtUHPczoFRsvVdVXBGtRbFmvRzu.png"
             alt="Global Presence"
             fill
             className="object-cover"

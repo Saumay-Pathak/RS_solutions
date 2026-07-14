@@ -60,7 +60,22 @@ export default async function PrivacyPolicyPage() {
   // Decode and sanitize content safely
   let decodedContent = safeDecodeContent(policy.content);
   if (decodedContent) {
+    const formattedDate = policy.updated_at
+      ? new Date(policy.updated_at).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      : new Date().toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
     decodedContent = decodedContent
+      .replace(/\{\{\s*LastUpdatedDate\s*\}\}/g, formattedDate)
+      .replace(/\{\{\s*CompanyName\s*\}\}/g, "RS Solutions")
+      .replace(/mumbai@realtimebiometrics\.com/gi, "mumbai@rssolutionsindia.co.in")
       .replace(/R S Solutions\s*-\s*Realtime Biometrics/gi, "RS Solutions")
       .replace(/Realtime\s*Biometrics/gi, "RS Solutions")
       .replace(/RealtimeBiometrics/gi, "RS Solutions")

@@ -5,9 +5,9 @@ import Layout from "@/components/layout/Layout";
 
 // ✅ SEO Metadata
 export const metadata: Metadata = {
-  title: "Privacy Policy | R S Solutions - Realtime Biometrics",
+  title: "Privacy Policy | RS Solutions",
   description:
-    "Read R S Solutions - Realtime Biometrics’ privacy policy on biometric data handling, data protection, and user rights.",
+    "Read RS Solutions’ privacy policy on data handling, data protection, and user rights.",
 };
 
 // ✅ Fetch policy data (server-side)
@@ -59,8 +59,12 @@ export default async function PrivacyPolicyPage() {
 
   // Decode and sanitize content safely
   let decodedContent = safeDecodeContent(policy.content);
-  if (decodedContent && !decodedContent.includes("R S Solutions")) {
-    decodedContent = decodedContent.replace(/Realtime Biometrics/g, "R S Solutions - Realtime Biometrics");
+  if (decodedContent) {
+    decodedContent = decodedContent
+      .replace(/R S Solutions\s*-\s*Realtime Biometrics/gi, "RS Solutions")
+      .replace(/Realtime\s*Biometrics/gi, "RS Solutions")
+      .replace(/RealtimeBiometrics/gi, "RS Solutions")
+      .replace(/R\s*S\s*Solutions/gi, "RS Solutions");
   }
   const sanitizedContent = DOMPurify.sanitize(decodedContent || "");
 

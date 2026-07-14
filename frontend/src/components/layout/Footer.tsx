@@ -382,7 +382,14 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="mt-10 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
-            <p className="text-gray-500 text-sm">{branding.footer_copyright}</p>
+            <p className="text-gray-500 text-sm">
+              {(branding?.footer_copyright || "© 2026 RS Solutions. All rights reserved.")
+                .replace(/R S Solutions\s*-\s*Realtime Biometrics/gi, "RS Solutions")
+                .replace(/RealTime Biometrics/gi, "RS Solutions")
+                .replace(/Realtime Biometrics/gi, "RS Solutions")
+                .replace(/RealtimeBiometrics/gi, "RS Solutions")
+                .replace(/R\s*S\s*Solutions/gi, "RS Solutions")}
+            </p>
             {visitorCount !== null && (
               <div className="flex items-center gap-2 text-gray-500 text-sm bg-gray-800/50 px-3 py-1 rounded-full border border-gray-700">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>

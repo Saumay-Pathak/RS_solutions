@@ -5,9 +5,9 @@ import Layout from "@/components/layout/Layout";
 
 // ✅ SEO Metadata
 export const metadata: Metadata = {
-  title: "Terms of Service | Realtime Biometrics",
+  title: "Terms of Service | RS Solutions",
   description:
-    "Read Realtime Biometric's terms of service for using our biometric solutions and services.",
+    "Read RS Solutions' terms of service for using our solutions and services.",
 };
 
 // ✅ Fetch terms data (server-side)
@@ -57,7 +57,14 @@ export default async function TermsOfServicePage() {
     );
   }
 
-  const decodedContent = safeDecodeContent(terms.content);
+  let decodedContent = safeDecodeContent(terms.content);
+  if (decodedContent) {
+    decodedContent = decodedContent
+      .replace(/R S Solutions\s*-\s*Realtime Biometrics/gi, "RS Solutions")
+      .replace(/Realtime\s*Biometrics/gi, "RS Solutions")
+      .replace(/RealtimeBiometrics/gi, "RS Solutions")
+      .replace(/R\s*S\s*Solutions/gi, "RS Solutions");
+  }
   const sanitizedContent = DOMPurify.sanitize(decodedContent || "");
 
   return (

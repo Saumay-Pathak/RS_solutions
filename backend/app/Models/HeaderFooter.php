@@ -154,7 +154,7 @@ class HeaderFooter extends Model
                 'footer_email' => 'info@realtimebiometrics.com',
                 'footer_phone' => '+91-8743 8743 34',
                 'footer_address' => 'C-83, Ganesh Nagar Pandav Nagar complex, Delhi, India 110092',
-                'footer_copyright' => '© 2024 RealTime Biometrics. All rights reserved.',
+                'footer_copyright' => '© 2026 RS Solutions. All rights reserved.',
                 'social_facebook' => 'https://facebook.com/realtimebiometrics',
                 'social_linkedin' => 'https://linkedin.com/company/realtimebiometrics',
                 'social_twitter' => 'https://twitter.com/realtimebiometrics',

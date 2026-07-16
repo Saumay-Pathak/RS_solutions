@@ -27,8 +27,13 @@ const actionVariants: Variants = {
 };
 
 export default function AskRiaActions() {
+  const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const fabRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   /* --------- Auto close on outside tap --------- */
   useEffect(() => {
@@ -48,6 +53,10 @@ export default function AskRiaActions() {
       document.removeEventListener("touchstart", handleOutsideClick);
     };
   }, [open]);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <>

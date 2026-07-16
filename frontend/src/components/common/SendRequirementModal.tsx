@@ -79,6 +79,7 @@ export default function SendRequirementModal({ isOpen, onClose, productName }: M
   );
   const [selectedSource, setSelectedSource] = useState<Option | null>(null);
 
+  const [consentChecked, setConsentChecked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [pincodeLoading, setPincodeLoading] = useState(false);
@@ -97,6 +98,7 @@ export default function SendRequirementModal({ isOpen, onClose, productName }: M
     setSelectedRequirement(null);
     setSelectedSource(null);
     setTouched({});
+    setConsentChecked(false);
   };
 
   /** ---------------- LOCK BODY SCROLL WHEN OPEN ---------------- **/
@@ -215,6 +217,7 @@ export default function SendRequirementModal({ isOpen, onClose, productName }: M
 
     if (!selectedRequirement) return "Requirement type is required";
     if (!selectedSource) return "Source is required";
+    if (!consentChecked) return "You must authorize notification and agree to Terms & Privacy Policy to submit.";
 
     return null;
   };
@@ -423,6 +426,36 @@ export default function SendRequirementModal({ isOpen, onClose, productName }: M
                 value={form.message}
                 onChange={handleChange}
               />
+            </div>
+
+            {/* Consent Checkbox */}
+            <div className="md:col-span-2 flex items-start gap-3 select-none">
+              <input
+                type="checkbox"
+                required
+                id="consent-checkbox-modal"
+                checked={consentChecked}
+                onChange={(e) => setConsentChecked(e.target.checked)}
+                className="w-4 h-4 mt-1 accent-orange-500 cursor-pointer"
+              />
+              <label htmlFor="consent-checkbox-modal" className="text-xs text-gray-600 leading-normal cursor-pointer text-left">
+                I hereby authorise to send notification on SMS/Messages/WhatsApp/Promotional/ RCS/ information Messages. By clicking Submit, you agree to our{" "}
+                <a
+                  href="/terms-of-service"
+                  target="_blank"
+                  className="text-orange-600 underline hover:text-orange-700 font-medium"
+                >
+                  Terms of Services
+                </a>{" "}
+                and then you have Read our{" "}
+                <a
+                  href="/privacy-policy"
+                  target="_blank"
+                  className="text-orange-600 underline hover:text-orange-700 font-medium"
+                >
+                  Privacy Policy
+                </a>.
+              </label>
             </div>
           </form>
         </div>

@@ -312,6 +312,33 @@ function FormModalPopUp({ headerData }: { headerData?: HeaderData }) {
 
           </div>
 
+          <div className="flex items-start gap-3 select-none">
+            <input
+              type="checkbox"
+              required
+              id="consent-checkbox-modal-popup"
+              className="w-4 h-4 mt-1 accent-orange-500 cursor-pointer"
+            />
+            <label htmlFor="consent-checkbox-modal-popup" className="text-xs text-gray-600 leading-normal cursor-pointer text-left">
+              I hereby authorise to send notification on SMS/Messages/WhatsApp/Promotional/ RCS/ information Messages. By clicking Submit, you agree to our{" "}
+              <a
+                href="/terms-of-service"
+                target="_blank"
+                className="text-orange-600 underline hover:text-orange-700 font-medium"
+              >
+                Terms of Services
+              </a>{" "}
+              and then you have Read our{" "}
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                className="text-orange-600 underline hover:text-orange-700 font-medium"
+              >
+                Privacy Policy
+              </a>.
+            </label>
+          </div>
+
           <button
             type="submit"
             className="bg-orange-500 text-white py-3 rounded-md w-full hover:bg-orange-600 transition"

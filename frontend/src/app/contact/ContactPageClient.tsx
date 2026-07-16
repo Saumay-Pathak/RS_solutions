@@ -3,7 +3,7 @@
 import { useEffect, useState, type FormEvent, type ChangeEvent } from "react";
 import Layout from "@/components/layout/Layout";
 import AdvancedBreadcrumb from "@/components/common/Bredacrumb";
-import { IconPhone, IconMail, IconMapPin } from "@tabler/icons-react";
+import { IconPhone, IconMail, IconMapPin, IconBrandWhatsapp } from "@tabler/icons-react";
 import { getContactInfo, submitForm } from "@/services/contactServices";
 import { getFaqs } from "@/services/faqService";
 import Select, { type StylesConfig, type SingleValue } from "react-select";
@@ -494,6 +494,32 @@ export default function ContactPageClient() {
                     required
                   />
                 </div>
+                <div className="flex items-start gap-3 select-none">
+                  <input
+                    type="checkbox"
+                    required
+                    id="consent-checkbox-contact-page"
+                    className="w-4 h-4 mt-1 accent-orange-500 cursor-pointer"
+                  />
+                  <label htmlFor="consent-checkbox-contact-page" className="text-xs text-gray-600 leading-normal cursor-pointer">
+                    I hereby authorise to send notification on SMS/Messages/WhatsApp/Promotional/ RCS/ information Messages. By clicking Submit, you agree to our{" "}
+                    <a
+                      href="/terms-of-service"
+                      target="_blank"
+                      className="text-orange-600 underline hover:text-orange-700 font-medium"
+                    >
+                      Terms of Services
+                    </a>{" "}
+                    and then you have Read our{" "}
+                    <a
+                      href="/privacy-policy"
+                      target="_blank"
+                      className="text-orange-600 underline hover:text-orange-700 font-medium"
+                    >
+                      Privacy Policy
+                    </a>.
+                  </label>
+                </div>
                 <button
                   disabled={submitting}
                   className="w-full md:w-auto bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md text-sm font-medium"
@@ -665,14 +691,14 @@ export default function ContactPageClient() {
           Book a demo and see how this solution transforms operations.
         </p>
         <div className="flex flex-col sm:flex-row px-4 justify-center gap-4 pb-10">
-          {(info?.enquiry_number || info?.customer_support_number) && (
-            <a
-              href={`tel:${(info?.enquiry_number || info?.customer_support_number || "8080892888").replace(/[^0-9+]/g, "")}`}
-              className="inline-flex items-center px-4 py-2 rounded-md bg-white text-[#9E4940] font-medium"
-            >
-              <IconPhone size={18} className="mr-2" /> {info?.enquiry_number || info?.customer_support_number || "+91 80808 92888"}
-            </a>
-          )}
+          <a
+            href="https://wa.me/realtimebiometrics"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-4 py-2 rounded-md bg-white text-[#9E4940] font-medium hover:shadow-lg transition-all"
+          >
+            <IconBrandWhatsapp size={18} className="mr-2 text-green-500" /> wa.me/realtimebiometrics
+          </a>
           {(info?.general_email ||
             info?.support_email ||
             info?.business_email) && (

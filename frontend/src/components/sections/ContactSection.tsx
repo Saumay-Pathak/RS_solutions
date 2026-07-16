@@ -342,6 +342,33 @@ const ContactSection = () => {
 
               <FloatingTextarea label="Message*" name="message" value={formData.message} onChange={handleInputChange} rows={5} />
 
+              <div className="flex items-start gap-3 select-none">
+                <input
+                  type="checkbox"
+                  required
+                  id="consent-checkbox-contact-section"
+                  className="w-4 h-4 mt-1 accent-orange-500 cursor-pointer animate-none"
+                />
+                <label htmlFor="consent-checkbox-contact-section" className="text-xs text-gray-600 leading-normal cursor-pointer text-left">
+                  I hereby authorise to send notification on SMS/Messages/WhatsApp/Promotional/ RCS/ information Messages. By clicking Submit, you agree to our{" "}
+                  <a
+                    href="/terms-of-service"
+                    target="_blank"
+                    className="text-orange-600 underline hover:text-orange-700 font-medium"
+                  >
+                    Terms of Services
+                  </a>{" "}
+                  and then you have Read our{" "}
+                  <a
+                    href="/privacy-policy"
+                    target="_blank"
+                    className="text-orange-600 underline hover:text-orange-700 font-medium"
+                  >
+                    Privacy Policy
+                  </a>.
+                </label>
+              </div>
+
               <button type="submit" className="bg-orange-500 text-white py-2.5 md:py-2 w-full rounded-md shadow-md hover:shadow-lg hover:bg-orange-600 transition">{isSubmitting ? "Submitting..." : "Submit"}</button>
             </form>
           </div>

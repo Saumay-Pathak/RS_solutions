@@ -7,20 +7,39 @@ export const metadata: Metadata = {
   title: "Cookie Policy",
 };
 
+function safeDecodeContent(raw: string = ""): string {
+  try {
+    if (!raw) return "";
+    const cleaned = raw
+      .replace(/\\u003C/g, "<")
+      .replace(/\\u003E/g, ">")
+      .replace(/\\u0026/g, "&")
+      .replace(/\\n/g, "")
+      .replace(/\\"/g, '"')
+      .replace(/\\\\/g, "\\")
+      .replace(/\r/g, "");
+    return decodeURIComponent(cleaned);
+  } catch (err) {
+    console.error("Decode Error:", err);
+    // If decode fails, fallback to the cleaned raw HTML string
+    return raw
+      .replace(/\\u003C/g, "<")
+      .replace(/\\u003E/g, ">")
+      .replace(/\\u0026/g, "&")
+      .replace(/\\n/g, "")
+      .replace(/\\"/g, '"')
+      .replace(/\\\\/g, "\\")
+      .replace(/\r/g, "");
+  }
+}
+
 const CookiePolicyPage = async () => {
   let decodedContent = "";
 
   try {
     const res = await getCookiePolicyData();
     if (res.success && res.data) {
-      const encodedContent = res.data.content;
-      decodedContent = decodeURIComponent(
-        encodedContent
-          .replace(/\"/g, '"')
-          .replace(/\\/g, "")
-          .replace(/\n/g, "")
-          .replace(/\r/g, "")
-      );
+      decodedContent = safeDecodeContent(res.data.content);
     } else {
       decodedContent = "<p>No content found.</p>";
     }

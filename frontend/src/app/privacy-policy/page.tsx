@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "Read RS Solutions’ privacy policy on data handling, data protection, and user rights.",
 };
 
+export const dynamic = "force-dynamic";
+
 // ✅ Fetch policy data (server-side)
 async function getPrivacyPolicy() {
   try {

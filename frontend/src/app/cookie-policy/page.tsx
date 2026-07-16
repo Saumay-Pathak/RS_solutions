@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   title: "Cookie Policy",
 };
 
+export const dynamic = "force-dynamic";
+
 function safeDecodeContent(raw: string = ""): string {
   try {
     if (!raw) return "";

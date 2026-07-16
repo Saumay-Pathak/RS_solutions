@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "Read RS Solutions' terms of service for using our solutions and services.",
 };
 
+export const dynamic = "force-dynamic";
+
 // ✅ Fetch terms data (server-side)
 async function getTermsOfService() {
   try {
